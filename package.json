@@ -13,6 +13,11 @@
     "url": "https://github.com/ipd-team-1/server/issues"
   },
   "homepage": "https://github.com/ipd-team-1/server#readme",
+  "devDependencies": {
+    "eslint": "^3.9.1",
+    "eslint-config-airbnb-base": "^9.0.0",
+    "eslint-plugin-import": "^2.1.0"
+  },
   "dependencies": {
     "body-parser": "^1.15.2",
     "cookie-parser": "^1.4.3",
