@@ -12,6 +12,7 @@ const app = express();
 // MIDDLEWARE ==================================================================
 
 app.use(morgan('combined'));
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 // TODO: Use multer.
 
