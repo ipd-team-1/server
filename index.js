@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 // const cookieParser = require('cookie-parser');
 // const multer = require('multer');
 
+require('./db');
+
 const app = express();
 
 // MIDDLEWARE ==================================================================
@@ -17,5 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/client', express.static(path.join(__dirname, 'client/dist/')));
 app.use('/manager', express.static(path.join(__dirname, 'manager/dist/')));
+
+app.use('/api/images', require('./routes/images'));
 
 app.listen(3000);

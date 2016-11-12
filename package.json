@@ -16,12 +16,14 @@
   "devDependencies": {
     "eslint": "^3.9.1",
     "eslint-config-airbnb-base": "^9.0.0",
-    "eslint-plugin-import": "^2.1.0"
+    "eslint-plugin-import": "^2.1.0",
+    "pm2": "^2.1.5"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
+    "mongoose": "^4.6.7",
     "morgan": "^1.7.0",
     "multer": "^1.2.0"
   }
