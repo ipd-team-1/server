@@ -8,7 +8,7 @@ const app = express();
 
 // Middleware.
 app.use(morgan('combined'));
-app.use(express.static('public'));
+app.use(express.static('client/dist'));
 app.use(bodyParser.urlencoded({ extended: false }));
 // TODO: Use multer.
 
