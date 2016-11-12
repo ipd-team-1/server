@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ipd-team-1/server.git"
+  },
+  "author": "David Zhu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ipd-team-1/server/issues"
+  },
+  "homepage": "https://github.com/ipd-team-1/server#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
