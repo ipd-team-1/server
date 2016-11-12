@@ -7,10 +7,15 @@ const multer       = require('multer');
 
 const app = express();
 
-// Middleware.
+// MIDDLEWARE ==================================================================
+
 app.use(morgan('combined'));
-app.use('/', express.static(path.join(__dirname, 'client/dist/')))
 app.use(bodyParser.urlencoded({ extended: false }));
 // TODO: Use multer.
+
+// ROUTES ======================================================================
+
+app.use('/client',  express.static(path.join(__dirname, 'client/dist/')));
+app.use('/manager', express.static(path.join(__dirname, 'manager/dist/')));
 
 app.listen(3000);
