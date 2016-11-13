@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "cd client && npm install && npm run bundle && cd ../manager && npm install && npm run bundle && cd .. && node_modules/.bin/pm2 start index.js"
+    "start": "node_modules/.bin/pm2 start index.js",
+    "poststart": "cd client && npm install && npm run bundle && cd ../manager && npm install && npm run bundle && cd .."
   },
   "repository": {
     "type": "git",
