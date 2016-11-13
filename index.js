@@ -23,4 +23,4 @@ app.use('/manager', express.static(path.join(__dirname, 'manager/dist/')));
 
 app.use('/api/images', require('./routes/images'));
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
