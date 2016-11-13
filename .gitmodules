@@ -1,6 +1,6 @@
 [submodule "client"]
 	path = client
-	url = git@github.com:ipd-team-1/client.git
+	url = git://github.com/ipd-team-1/client.git
 [submodule "manager"]
 	path = manager
-	url = git@github.com:ipd-team-1/manager.git
+	url = git://github.com/ipd-team-1/manager.git
