@@ -1,11 +1,42 @@
 const router = require('express').Router();
+const Image = require('../models/image').Image;
+
+router.get('/', (req, res) => {
+  Image
+    .find()
+    .limit(10)
+    .exec((err, images) => {
+      res.json(images);
+    });
+});
 
 router.get('/random', (req, res) => {
-  res.send('This is a random cat');
+  Image.count().exec((err, count) => {
+    const random = Math.floor(Math.random() * count);
+    Image.findOne().skip(random).exec((error, image) => {
+      res.json(image);
+    });
+  });
 });
 
 router.post('/', (req, res) => {
-  res.sendStatus(200);
+  const image = new Image({
+    name: req.body.name,
+    url: req.body.url,
+  });
+  image.save((err) => {
+    if (err) return res.sendStatus(500);
+    return res.sendStatus(200);
+  });
+});
+
+router.delete('/:imageId', (req, res) => {
+  Image.remove({
+    _id: req.params.imageId,
+  }, (err) => {
+    if (err) return res.sendStatus(500);
+    return res.sendStatus(200);
+  });
 });
 
 module.exports = router;
