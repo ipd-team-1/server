@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "node_modules/.bin/pm2 start index.js",
-    "poststart": "cd client && npm install && npm run bundle && cd ../manager && npm install && npm run bundle && cd .."
+    "preinstall": "cd client && npm install && npm run bundle && cd ../manager && npm install && npm run bundle && cd ..",
+    "start": "node_modules/.bin/nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
     "eslint": "^3.9.1",
     "eslint-config-airbnb-base": "^9.0.0",
     "eslint-plugin-import": "^2.1.0",
-    "pm2": "^2.1.5"
+    "nodemon": "^1.11.0"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
