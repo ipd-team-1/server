@@ -2,7 +2,9 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "scripts": {},
+  "scripts": {
+    "start": "cd client && npm install && npm run bundle && cd ../manager && npm install && npm run bundle && cd .. && node_modules/.bin/pm2 start index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ipd-team-1/server.git"
