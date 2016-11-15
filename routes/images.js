@@ -10,10 +10,21 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/random', (req, res) => {
+router.get('/random/', (req, res) => {
   Image.count().exec((err, count) => {
-    const random = Math.floor(Math.random() * count);
+    const random = Math.floor(Math.random() * (count - 1));
     Image.findOne().skip(random).exec((error, image) => {
+      res.json(image);
+    });
+  });
+});
+
+router.get('/random/:imageId', (req, res) => {
+  Image.count().exec((err, count) => {
+    const random = Math.floor(Math.random() * (count - 1));
+    Image.findOne({
+      _id: { $ne: req.params.imageId },
+    }).skip(random).exec((error, image) => {
       res.json(image);
     });
   });
